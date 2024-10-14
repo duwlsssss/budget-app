@@ -1,0 +1,39 @@
+.itemContainer{
+  padding: 1rem 1rem 0 1rem;
+  font-size: clamp(0.3rem, 2vw, 1.5rem);
+}
+
+.infoMode,
+.editMode{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:1rem;
+}
+.info{
+  display:flex;
+  align-items: center;
+  gap:1rem;
+}
+
+.edit{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:1rem;
+}
+
+input{
+  padding: clamp(0.1rem, 0.5vw, 0.5rem);
+}
+
+.btnContainer{
+  display: flex;
+  gap:1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+Button{
+  font-size: clamp(1rem, 3vw, 2rem);
+}

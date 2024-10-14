@@ -1,0 +1,16 @@
+.listContainer{
+  padding: 3rem 2rem 1rem;
+}
+.listContainer h2{
+  font-size: clamp(0.3rem, 2vw, 1.5rem);
+  font-weight: 500;
+  padding: 0.5rem;
+  color: #777;
+}
+.sum{
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 700;
+}

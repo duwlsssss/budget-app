@@ -11,8 +11,6 @@ export const ExpenseForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addExpense(charge, amount);
-    setCharge('');
-    setAmount('');
   }
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
@@ -23,8 +21,7 @@ export const ExpenseForm = () => {
 
   return (
    <div className={styles.formContainer}>
-      <h2>예상 지출 등록</h2>
-       <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className={styles.charge}>
           지출 항목
           <input 
@@ -40,7 +37,7 @@ export const ExpenseForm = () => {
           <input 
             type='number'
             value={amount}
-            placeholder='비용 입력해주세요'
+            placeholder='비용을 입력해주세요'
             onChange={(e) => setAmount(e.target.value)}
             onKeyDown={handleKeyDown}
           />

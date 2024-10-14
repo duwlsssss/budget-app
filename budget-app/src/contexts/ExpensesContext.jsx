@@ -12,7 +12,7 @@ const ExpensesProvider = ({ children }) => {
   ]);
 
   const MAX_CHARGE_LENGTH = 20; 
-  const MAX_AMOUNT_LENGTH = 6; 
+  const MAX_AMOUNT_LENGTH = 15; 
 
   // useCallback으로 handleInput이 ExpensesProvider가 리렌더링때마다 새로 만드는 거 막음
   // 없으면 새 함수 생성하고 useExpenses를 사용하는 컴포넌트에서 context의 값이 바뀐 것으로 간주해 낭비 렌더링 발생함 

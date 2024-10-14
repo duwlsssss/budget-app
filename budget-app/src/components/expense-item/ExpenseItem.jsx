@@ -15,8 +15,6 @@ const ExpenseItem = ({ expense }) => {
       e.preventDefault();
       editExpense(expense.id, editCharge, editAmount);
       setIsEditing(false);
-      setEditCharge('');
-      setEditAmount('');
     }
   };
 
@@ -24,44 +22,53 @@ const ExpenseItem = ({ expense }) => {
     <li className={styles.itemContainer}>
       {isEditing ? (
         <div className={styles.editMode}>
-          <input
-            type="text"
-            value={editCharge}
-            onChange={(e) => setEditCharge(e.target.value)}
-            onKeyDown={handleKeyDown}
-          />
-          <input
-            type="number"
-            value={editAmount}
-            onChange={(e) => setEditAmount(e.target.value)}
-            onKeyDown={handleKeyDown}
-          />
-          <button onClick={() => {
-            editExpense(expense.id, editCharge, editAmount)
-            setIsEditing(false)
-            }}
-          >
-            <MdDone />
-          </button>
+          <div className={styles.edit}>
+              <input
+                type="text"
+                value={editCharge}
+                onChange={(e) => setEditCharge(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+              <input
+                type="number"
+                value={editAmount}
+                onChange={(e) => setEditAmount(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+          </div>
+          <div className={styles.btnContainer}>
+            <button 
+              className={styles.doneBtn}
+              onClick={() => {
+                editExpense(expense.id, editCharge, editAmount)
+                setIsEditing(false)
+                }}
+            >
+              <MdDone />
+            </button> 
+          </div>
         </div>
       ) : (
-        <div className={styles.info}>
-          <span className={styles.charge}>{expense.charge}</span>
-          <span className={styles.amount}>{expense.amount} 원</span>
+        <div className={styles.infoMode}>
+          <div className={styles.info}>
+            <div className={styles.charge}>{expense.charge}</div>
+            <div className={styles.amount}>{expense.amount} 원</div>
+          </div>
+          <div className={styles.btnContainer}>
+            <button className={styles.editBtn}
+              onClick={()=>setIsEditing(!isEditing)}
+            >
+              <MdEdit />
+            </button>  
+            <button className={styles.deleteBtn}
+              onClick={()=>deleteExpense(expense.id)}
+            >
+              <MdDelete />
+            </button> 
+          </div>
         </div>
       )}
-      <div className={styles.btnContainer}>
-        <button className={styles.editBtn}
-          onClick={()=>setIsEditing(!isEditing)}
-        >
-          <MdEdit />
-        </button>  
-        <button className={styles.deleteBtn}
-          onClick={()=>deleteExpense(expense.id)}
-        >
-          <MdDelete />
-        </button>  
-      </div>
+      <hr/>
     </li>
   );
 }
