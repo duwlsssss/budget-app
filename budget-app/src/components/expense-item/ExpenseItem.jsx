@@ -28,12 +28,14 @@ const ExpenseItem = ({ expense }) => {
                 value={editCharge}
                 onChange={(e) => setEditCharge(e.target.value)}
                 onKeyDown={handleKeyDown}
+                placeholder='지출 항목'
               />
               <input
                 type="number"
                 value={editAmount}
                 onChange={(e) => setEditAmount(e.target.value)}
                 onKeyDown={handleKeyDown}
+                 placeholder='비용'
               />
           </div>
           <div className={styles.btnContainer}>

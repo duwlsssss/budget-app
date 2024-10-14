@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
-import { useExpensesValue } from '../../contexts/ExpensesContext';
+import { useExpensesValue, useExpensesActions } from '../../contexts/ExpensesContext';
 import ExpenseItem from '../expense-item/ExpenseItem';
 import styles from './ExpenseList.module.css';
 
 export const ExpenseList = () => {
   const expenses = useExpensesValue();
+  const {deleteAll} = useExpensesActions();
 
   const sum = expenses.reduce((acc,v)=>acc+Number(v.amount),0);
 
@@ -15,7 +16,10 @@ export const ExpenseList = () => {
 
   return(
     <ul className={styles.listContainer}>
-      <h2>지출 리스트</h2>
+      <header>
+        <h2>지출 리스트</h2>
+        <button className={styles.deleteAllBtn} onClick={deleteAll}>Delete All</button>
+      </header>
       <hr/>
       {expenses?.map(expense=>(
         <ExpenseItem 

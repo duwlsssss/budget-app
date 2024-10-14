@@ -4,10 +4,15 @@ import {ExpensesProvider} from './contexts/ExpensesContext'
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-  padding: 2rem;
-  background-color: #999;
+  padding: 3rem;
+  background-color: #5aa5fa;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
   h1{
+    color: white;
     font-size: clamp(1rem, 2.5vw, 2rem);
     font-weight: 700;
   }
@@ -15,8 +20,9 @@ const StyledContainer = styled.div`
 
 const StyledCalc = styled.div`
   background-color: white;
-  border-radius: 5px;
-  margin-top: 2rem;
+  border-radius: 10px;
+  width: 50vw;
+  margin-top: 1rem;
 `;
 
 function App() {

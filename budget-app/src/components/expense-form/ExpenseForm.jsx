@@ -5,6 +5,7 @@ import { IoAddCircleOutline } from "react-icons/io5";
 
 export const ExpenseForm = () => {
   const {addExpense} = useExpensesActions();
+
   const [charge, setCharge] = useState('');
   const [amount, setAmount] = useState('');
 
